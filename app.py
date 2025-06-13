@@ -2064,7 +2064,7 @@ with gr.Blocks(theme=quant_theme, css="""
 
             chatbot = gr.Chatbot(
                 label="Quant Intelli+ ⚽️",
-                height=1200,
+                height=1000,
                 avatar_images=(None, "https://img.icons8.com/color/48/artificial-intelligence.png"),
                 type='messages'
             )
