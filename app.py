@@ -2045,7 +2045,7 @@ with gr.Blocks(theme=quant_theme, css="""
     # Main content
     with gr.Row():
         # Left panel: Chat
-        with gr.Column(scale=3):
+        with gr.Column(scale=9):
             with gr.Column(elem_classes="container"):
                 gr.Markdown( # Updated instructions
                     """
@@ -2064,7 +2064,7 @@ with gr.Blocks(theme=quant_theme, css="""
 
             chatbot = gr.Chatbot(
                 label="Quant Intelli+ ⚽️",
-                height=500,
+                height=700,
                 avatar_images=(None, "https://img.icons8.com/color/48/artificial-intelligence.png"),
                 type='messages'
             )
@@ -2079,7 +2079,7 @@ with gr.Blocks(theme=quant_theme, css="""
                 msg_textbox = gr.Textbox(
                     label="Your Message",
                     placeholder="Enter odds or type a question...",
-                    scale=5, # Adjusted scale
+                    scale=10, 
                     lines=2
                 )
                 submit_btn = gr.Button("Send", variant="primary", scale=1)
