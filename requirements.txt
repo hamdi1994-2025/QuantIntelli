@@ -1,0 +1,12 @@
+google-generativeai
+xgboost
+scikit-learn  
+pandas        
+numpy
+gradio
+python-dotenv 
+duckduckgo-search
+tavily-python
+requests
+beautifulsoup4
+supabase
